@@ -2,8 +2,7 @@
 {
     public enum LockType
     {
-        Mechanical,
-        SemiDigital,
-        Digital
+        Cylinder,
+        SmartHandle
     }
 }
