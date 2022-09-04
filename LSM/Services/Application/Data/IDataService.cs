@@ -1,4 +1,4 @@
-﻿using LSM.DTO;
+﻿using LSM.Dto;
 
 namespace LSM.Services.Data
 {
