@@ -11,7 +11,7 @@ using LSM.Services.Weight;
 
 namespace LSM.Services.Locks
 {
-    public class LockSeachService : ISearchService<LockDto>
+    public class LockSearchService : ISearchService<LockDto>
     {
         private readonly IDataService dataService;
         private readonly IFilterService<Lock> filterLockService;
@@ -22,7 +22,7 @@ namespace LSM.Services.Locks
         private FilterLockService filterLockService1;
         private SortService sortLockService;
 
-        public LockSeachService(
+        public LockSearchService(
             IDataService dataService,
             IFilterService<Lock> filterLockService,
             IWeightService weightService,
@@ -36,7 +36,7 @@ namespace LSM.Services.Locks
             this.mapper=mapper;
         }
 
-        public LockSeachService(DataService dataService1, FilterLockService filterLockService1, SortService sortLockService)
+        public LockSearchService(DataService dataService1, FilterLockService filterLockService1, SortService sortLockService)
         {
             this.dataService1=dataService1;
             this.filterLockService1=filterLockService1;

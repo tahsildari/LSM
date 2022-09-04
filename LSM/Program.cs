@@ -29,8 +29,12 @@ namespace LSM
             builder.Services.AddSingleton<IDataService, DataService>();
             builder.Services.AddScoped<IWeightService, WeightService>();
             builder.Services.AddScoped<ISortService<IWeighted>, SortService>();
+
             builder.Services.AddScoped<IFilterService<Lock>, FilterLockService>();
-            builder.Services.AddScoped<ISearchService<LockDto>, LockSeachService>();
+            builder.Services.AddScoped<ISearchService<LockDto>, LockSearchService>();
+
+            builder.Services.AddScoped<IFilterService<Building>, FilterBuildingService>();
+            builder.Services.AddScoped<ISearchService<BuildingDto>, BuildingSearchService>();
 
             //builder.Services.AddAutoMapper(typeof(Program));
             var mapperConfig = new MapperConfiguration(mc =>

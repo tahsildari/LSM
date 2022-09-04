@@ -18,7 +18,7 @@ namespace LSM.Dto
 
         public int SearchWeight { get; set; }
 
-        public BuildingDto Building { get; set; }
+        public LockBuildingDto Building { get; set; }
 
     }
 }

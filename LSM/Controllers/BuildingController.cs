@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace LSM.Controllers
 {
     [ApiController]
-    [Route("locks")]
-    public class LockController : Controller
+    [Route("building")]
+    public class BuildingController : Controller
     {
-        private readonly ISearchService<LockDto> searchService;
+        private readonly ISearchService<BuildingDto> searchService;
 
-        public LockController(ISearchService<LockDto> searchService)
+        public BuildingController(ISearchService<BuildingDto> searchService)
         {
             this.searchService=searchService;
 
