@@ -1,6 +1,6 @@
 ﻿using LSM.Entities;
 
-namespace LSM.DTO
+namespace LSM.Dto
 {
     public class DataFile
     {
