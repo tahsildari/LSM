@@ -5,8 +5,8 @@ namespace LSM.Entities
 {
     public class Medium
     {
-        public int Id { get; set; }
-        public int GroupId { get; set; }
+        public string Id { get; set; }
+        public string GroupId { get; set; }
 
         [Weight(3)]
         public MediumType Type { get; set; }

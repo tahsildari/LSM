@@ -4,7 +4,7 @@ namespace LSM.Entities
 {
     public class Building
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [Weight(7)]
         [TransitiveWeight(5)]

@@ -5,8 +5,8 @@ namespace LSM.Entities
 {
     public class Lock
     {
-        public int Id { get; set; }
-        public int BuildingId { get; set; }
+        public string Id { get; set; }
+        public string BuildingId { get; set; }
 
         [Weight(3)]
         public LockType Type { get; set; }
