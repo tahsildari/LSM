@@ -55,7 +55,7 @@ namespace LSM.Services.Weight
 
                             value = propertyValue.ToString();
                             if (value.Equals(text))
-                                weight += (((IWeighable)attr).Weight * 10); //todo: no magic string
+                                weight += (((IWeighable)attr).Weight * Constants.FullMatchMultiplier); //todo: no magic string
                             else if (value.ContainsIgnoreCase(text))
                                 weight += ((IWeighable)attr).Weight;
                         }
