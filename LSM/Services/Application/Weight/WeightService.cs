@@ -23,8 +23,11 @@ namespace LSM.Services.Weight
                 ownWeight = CalculateWeight<TEntity, WeightAttribute>(@entity);
 
                 var transitiveWeight = 0;
-                var relationObject = (TRelation)typeof(TEntity).GetProperty(relation).GetValue(@entity, null);
-                transitiveWeight = CalculateWeight<TRelation, TransitiveWeightAttribute>(relationObject);
+                if (typeof(TRelation) != typeof(None))
+                {
+                    var relationObject = (TRelation)typeof(TEntity).GetProperty(relation).GetValue(@entity, null);
+                    transitiveWeight = CalculateWeight<TRelation, TransitiveWeightAttribute>(relationObject);
+                }
 
                 var dto = mapper.Map<TResult>(@entity);
 
