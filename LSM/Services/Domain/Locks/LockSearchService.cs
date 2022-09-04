@@ -18,9 +18,6 @@ namespace LSM.Services.Locks
         private readonly IWeightService weightService;
         private readonly ISortService<IWeighted> sortService;
         private readonly IMapper mapper;
-        private DataService dataService1;
-        private FilterLockService filterLockService1;
-        private SortService sortLockService;
 
         public LockSearchService(
             IDataService dataService,
@@ -34,13 +31,6 @@ namespace LSM.Services.Locks
             this.weightService=weightService;
             this.sortService=sortService;
             this.mapper=mapper;
-        }
-
-        public LockSearchService(DataService dataService1, FilterLockService filterLockService1, SortService sortLockService)
-        {
-            this.dataService1=dataService1;
-            this.filterLockService1=filterLockService1;
-            this.sortLockService=sortLockService;
         }
 
         public List<LockDto> Search(string searchText)
