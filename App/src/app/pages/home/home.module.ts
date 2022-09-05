@@ -4,14 +4,10 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { LockItemComponent } from 'src/app/components/lock-item/lock-item.component';
 
 @NgModule({
-  declarations: [HomeComponent],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    HttpClientModule
-  ]
+  declarations: [HomeComponent, LockItemComponent],
+  imports: [CommonModule, HomeRoutingModule, HttpClientModule],
 })
-export class HomeModule { }
+export class HomeModule {}
