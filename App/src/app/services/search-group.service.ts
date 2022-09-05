@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { GroupDto } from '../models/GroupDto';
+import { GroupModel } from '../models/GroupModel';
 import { AppSettings } from '../configuration/app-settings';
 
 @Injectable({
@@ -13,8 +13,8 @@ export class SearchGroupService extends DataService {
     super(AppSettings.API_ENDPOINT, http);
   }
 
-  getItems(searchText : string): Observable<GroupDto[]> {
-    return this.http.get<GroupDto[]>(AppSettings.API_ENDPOINT + 'groups?searchBy=' + searchText);
+  getItems(searchText : string): Observable<GroupModel[]> {
+    return this.http.get<GroupModel[]>(AppSettings.API_ENDPOINT + 'groups?searchBy=' + searchText);
   }
 }
 

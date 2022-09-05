@@ -1,4 +1,4 @@
-export interface BuildingDto {
+export interface LockBuildingModel {
     shortcut: string;
     name: string;
     description: string;

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { GroupDto } from 'src/app/models/GroupDto';
+import { GroupModel } from 'src/app/models/GroupModel';
 
 @Component({
   selector: 'app-group-item',
@@ -7,7 +7,7 @@ import { GroupDto } from 'src/app/models/GroupDto';
   styleUrls: ['./group-item.component.scss']
 })
 export class GroupItemComponent implements OnInit {
-  @Input("group") group: GroupDto;
+  @Input("group") group: GroupModel;
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BuildingDto } from 'src/app/models/BuildingDto';
+import { BuildingModel } from 'src/app/models/BuildingModel';
 
 @Component({
   selector: 'app-building-item',
@@ -7,7 +7,7 @@ import { BuildingDto } from 'src/app/models/BuildingDto';
   styleUrls: ['./building-item.component.scss']
 })
 export class BuildingItemComponent implements OnInit {
-  @Input("building") building: BuildingDto;
+  @Input("building") building: BuildingModel;
 
   constructor() { }
 

@@ -1,7 +1,7 @@
 import { LockType } from "./lockType";
-import { LockBuildingDto } from "./lockBuildingDto";
+import { LockBuildingModel } from "./LockBuildingModel";
 
-export interface LockDto {
+export interface LockModel {
     type: LockType;
     name: string;
     serialNumber: string;
@@ -9,5 +9,5 @@ export interface LockDto {
     roomNumber: string;
     description: string;
     searchWeight: number;
-    building: LockBuildingDto;
+    building: LockBuildingModel;
 }

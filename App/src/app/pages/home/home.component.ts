@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SearchLockService } from '../../services/search-lock.service';
-import { LockDto } from 'src/app/models/LockDto';
+import { LockModel } from 'src/app/models/LockModel';
 import { SearchBuildingService } from 'src/app/services/search-building.service';
-import { BuildingDto } from 'src/app/models/BuildingDto';
+import { BuildingModel } from 'src/app/models/BuildingModel';
 import { SearchGroupService } from 'src/app/services/search-group.service';
-import { GroupDto } from 'src/app/models/GroupDto';
+import { GroupModel } from 'src/app/models/GroupModel';
 
 @Component({
   selector: 'app-home',
@@ -16,12 +16,12 @@ export class HomeComponent implements OnInit {
   searchLockService: SearchLockService;
   searchBuildingService: SearchBuildingService;
   searchGroupService: SearchGroupService;
-  locks: LockDto[];
+  locks: LockModel[];
   entityOptions: string[] = ['Lock', 'Building', 'Medium', 'Group'];
   searchText: string = '';
   entity: string = 'Lock';
-  buildings: BuildingDto[];
-  groups: GroupDto[];
+  buildings: BuildingModel[];
+  groups: GroupModel[];
 
   constructor(
     private http: HttpClient,

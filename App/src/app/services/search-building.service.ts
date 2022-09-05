@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppSettings } from '../configuration/app-settings';
-import { BuildingDto } from '../models/BuildingDto';
+import { BuildingModel } from '../models/BuildingModel';
 import { DataService } from './data.service';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class SearchBuildingService extends DataService  {
     super(AppSettings.API_ENDPOINT, http);
   }
 
-  getItems(searchText : string): Observable<BuildingDto[]> {
-    return this.http.get<BuildingDto[]>(AppSettings.API_ENDPOINT + 'buildings?searchBy=' + searchText);
+  getItems(searchText : string): Observable<BuildingModel[]> {
+    return this.http.get<BuildingModel[]>(AppSettings.API_ENDPOINT + 'buildings?searchBy=' + searchText);
   }
 }
