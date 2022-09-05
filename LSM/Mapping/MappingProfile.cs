@@ -9,6 +9,7 @@ namespace LSM.Mapping
         public MappingProfile()
         {
             CreateMap<Building, BuildingDto>();
+            CreateMap<Building, LockBuildingDto>();
             CreateMap<Lock, LockDto>();
         }
     }
