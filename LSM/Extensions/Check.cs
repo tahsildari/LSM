@@ -1,4 +1,6 @@
-﻿namespace LSM.Extensions
+﻿using LSM.Exceptions;
+
+namespace LSM.Extensions
 {
     public static class Check
     {
@@ -7,11 +9,11 @@
             Exception ex = null;
             if (value == null)
             {
-                ex = new ArgumentNullException(parameterName);
+                ex = new AppException(parameterName);
             }
             else if (value.Trim().Length == 0)
             {
-                ex = new ArgumentException(GetArgumentIsEmptyMessage(parameterName), parameterName);
+                ex = new AppException(GetArgumentIsEmptyMessage(parameterName), parameterName);
             }
 
             if (ex != null)
