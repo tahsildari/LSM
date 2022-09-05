@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { SearchLockService } from '../../services/search-lock.service';
+import { LockDto } from 'src/app/models/LockDto';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +9,21 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  searchLockService: SearchLockService;
+  locks : LockDto[];
+  entityOptions : string[] = ["Lock", "Building", "Medium", "Group"];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, searchLockService: SearchLockService) { 
+    this.searchLockService = searchLockService;
+  }
 
   ngOnInit(): void {
+    this.search();
   }
 
   search(){
-    let courses = this.http
-    .get<Course[]>("https://localhost:49157/building?searchBy=" + )
-    .map(data => _.values(data))
-    .do(console.log);
+    this.searchLockService.getItems().subscribe(locks => {
+      this.locks = locks;
+    });
   }
 }
