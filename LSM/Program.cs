@@ -6,6 +6,7 @@ using LSM.Mapping;
 using LSM.Services.Application.Sorting;
 using LSM.Services.Data;
 using LSM.Services.Domain;
+using LSM.Services.Domain.Groups;
 using LSM.Services.Domain.Locks;
 using LSM.Services.Filter;
 using LSM.Services.Locks;
@@ -41,6 +42,9 @@ namespace LSM
 
             builder.Services.AddScoped<IFilterService<Building>, FilterBuildingService>();
             builder.Services.AddScoped<ISearchService<BuildingDto>, BuildingSearchService>();
+
+            builder.Services.AddScoped<IFilterService<Group>, FilterGroupService>();
+            builder.Services.AddScoped<ISearchService<GroupDto>, GroupSearchService>();
 
             //builder.Services.AddAutoMapper(typeof(Program));
             var mapperConfig = new MapperConfiguration(mc =>

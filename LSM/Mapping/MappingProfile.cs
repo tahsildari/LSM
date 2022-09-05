@@ -11,6 +11,7 @@ namespace LSM.Mapping
             CreateMap<Building, BuildingDto>();
             CreateMap<Building, LockBuildingDto>();
             CreateMap<Lock, LockDto>();
+            CreateMap<Group, GroupDto>();
         }
     }
 
