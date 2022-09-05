@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using LSM.Dto;
 using LSM.Entities;
+using LSM.Extensions;
 using LSM.Services.Application.Sorting;
 using LSM.Services.Data;
 using LSM.Services.Domain;
@@ -34,6 +35,8 @@ namespace LSM.Services.Locks
         }
         public List<BuildingDto> Search(string searchText)
         {
+            Check.NotEmpty(searchText, nameof(searchText));
+
             var data = dataService.FetchData();
             var buildings = data.Buildings.ToList();
             var filteredBuildings = filterService.Filter(buildings, searchText);

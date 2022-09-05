@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LSM.Controllers
 {
     [ApiController]
-    [Route("building")]
+    [Route("buildings")]
     public class BuildingController : Controller
     {
         private readonly ISearchService<BuildingDto> searchService;
