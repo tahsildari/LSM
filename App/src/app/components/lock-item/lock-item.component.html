@@ -4,18 +4,18 @@
     
     <div class="d-flex justify-content-between mb-3 small" >
       <div class=" text-muted">
-        <i class="fa fa-key"></i>
+        <i class="fa fa-key"></i> 
         {{ lock.serialNumber }}
       </div>
       <div class="" *ngIf="lock.floor">
-        <i class="fa fa-angle-double-up"></i>
+        floor:  
         {{ lock.floor }}
       </div>
     </div>
-    <p class="card-text">{{ lock.building.description }}</p>
+    <p class="card-text text-small"> <i class="fa fa-building"></i> {{ lock.building.description }}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{ lock.roomNumber }}</li>
-    <li class="list-group-item">{{ lock.description }}</li>
+    <li class="list-group-item"> room: {{ lock.roomNumber }}</li>
+    <li class="list-group-item"> {{ lock.description }}</li>
   </ul>
 </div>
