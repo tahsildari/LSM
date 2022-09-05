@@ -22,9 +22,16 @@
       <app-lock-item [lock]="lock"></app-lock-item>
     </div>
   </div>
+
   <div class="row" *ngIf="entity == 'Building'">
     <div *ngFor="let building of buildings" class="col-3">
       <app-building-item [building]="building"></app-building-item>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="entity == 'Group'">
+    <div *ngFor="let group of groups" class="col-3">
+      <app-group-item [group]="group"></app-group-item>
     </div>
   </div>
 </div>

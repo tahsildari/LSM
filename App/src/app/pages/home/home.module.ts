@@ -6,10 +6,14 @@ import { HomeComponent } from './home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LockItemComponent } from 'src/app/components/lock-item/lock-item.component';
 import { BuildingItemComponent } from 'src/app/components/building-item/building-item.component';
+import { GroupItemComponent } from 'src/app/components/group-item/group-item.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HomeComponent, LockItemComponent, BuildingItemComponent],
+  declarations: [HomeComponent, 
+    LockItemComponent, 
+    BuildingItemComponent,
+    GroupItemComponent],
   imports: [CommonModule, HomeRoutingModule, HttpClientModule, FormsModule],
 })
 export class HomeModule {}
