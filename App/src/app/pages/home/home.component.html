@@ -3,7 +3,9 @@
     <div class="row">
       <div class="col">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Search text ..." aria-label="Search text ..." aria-describedby="button-addon2">
+          <input type="text" class="form-control" [(ngModel)]="searchText"
+            placeholder="Search text ..." aria-label="Search text ..." 
+            aria-describedby="button-addon2">
           <select class="form-control input-group-append w-10">
             <option *ngFor="let op of entityOptions" value="op">{{op}}</option>
           </select>

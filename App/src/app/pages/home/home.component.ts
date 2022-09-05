@@ -6,23 +6,22 @@ import { LockDto } from 'src/app/models/LockDto';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   searchLockService: SearchLockService;
-  locks : LockDto[];
-  entityOptions : string[] = ["Lock", "Building", "Medium", "Group"];
+  locks: LockDto[];
+  entityOptions: string[] = ['Lock', 'Building', 'Medium', 'Group'];
+  searchText: string = '';
 
-  constructor(private http: HttpClient, searchLockService: SearchLockService) { 
+  constructor(private http: HttpClient, searchLockService: SearchLockService) {
     this.searchLockService = searchLockService;
   }
 
-  ngOnInit(): void {
-    this.search();
-  }
+  ngOnInit(): void {}
 
-  search(){
-    this.searchLockService.getItems().subscribe(locks => {
+  search() {
+    this.searchLockService.getItems(this.searchText).subscribe((locks) => {
       this.locks = locks;
     });
   }

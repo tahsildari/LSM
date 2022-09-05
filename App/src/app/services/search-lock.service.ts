@@ -10,10 +10,10 @@ import { AppSettings } from '../configuration/app-settings';
 })
 export class SearchLockService extends DataService {
   constructor(http: HttpClient) {
-    super('https://localhost:49157/', http);
+    super(AppSettings.API_ENDPOINT, http);
   }
 
-  getItems(): Observable<LockDto[]> {
-    return this.http.get<LockDto[]>(AppSettings.API_ENDPOINT + 'locks?searchBy=off');
+  getItems(searchText : string): Observable<LockDto[]> {
+    return this.http.get<LockDto[]>(AppSettings.API_ENDPOINT + 'locks?searchBy=' + searchText);
   }
 }
