@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Search text" aria-label="Search text" aria-describedby="button-addon2">
-          <select class="form-control input-group-append">
+          <input type="text" class="form-control" placeholder="Search text ..." aria-label="Search text ..." aria-describedby="button-addon2">
+          <select class="form-control input-group-append w-10">
             <option *ngFor="let op of entityOptions" value="op">{{op}}</option>
           </select>
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="search()">Button</button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="search()">Search</button>
           </div>
         </div>
       </div>
