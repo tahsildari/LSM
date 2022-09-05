@@ -1,6 +1,7 @@
 using AutoMapper;
 using LSM.Dto;
 using LSM.Entities;
+using LSM.Exceptions;
 using LSM.Mapping;
 using LSM.Services.Application.Sorting;
 using LSM.Services.Data;
@@ -22,6 +23,11 @@ namespace LSM
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+            {
+                builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+            }));
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -53,6 +59,10 @@ namespace LSM
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseMiddleware<ErrorHandlerMiddleware>();
+
+            app.UseCors("corsapp");
 
             app.UseHttpsRedirection();
 
