@@ -4,10 +4,10 @@
     
     <div class="d-flex justify-content-between mb-3 small" >
       <div class=" text-muted">
-        <i class="fa fa-apple"></i>
+        <i class="fa fa-key"></i>
         {{ lock.serialNumber }}
       </div>
-      <div class="">
+      <div class="" *ngIf="lock.floor">
         <i class="fa fa-angle-double-up"></i>
         {{ lock.floor }}
       </div>
