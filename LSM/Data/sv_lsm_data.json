@@ -597,6 +597,14 @@
       "serialNumber": "UID-378D17F8"
     },
     {
+      "id": "2c2ec98f-137a-4c49-a47a-814ae18a3372",
+      "groupId": "70c886f5-b74e-49f4-8d9f-cf2d6645d4d6",
+      "type": "Card",
+      "owner": "Test",
+      "description": "Test",
+      "serialNumber": "UID-378D17FA"
+    },
+    {
       "id": "2c2ec98f-137a-4c49-a47a-814ae18a3363",
       "groupId": "70c886f5-b74e-49f4-8d9f-cf2d6645d4dd",
       "type": "Card",
