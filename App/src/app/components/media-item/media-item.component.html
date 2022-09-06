@@ -1,0 +1,23 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title mb-1">{{ medium.owner }}</h5>
+
+    <div class="d-flex justify-content-between mb-3 small">
+      <div class="text-muted">
+        <i class="fa fa-barcode"></i>
+        {{ medium.serialNumber }}
+      </div>
+    </div>
+    <p class="card-text text-small" *ngIf="medium.description">
+      {{ medium.description }}
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <i class="fa fa-object-group"></i> {{ medium.group.name }}
+    </li>
+    <li class="list-group-item">
+      {{ medium.group.description }}
+    </li>
+  </ul>
+</div>

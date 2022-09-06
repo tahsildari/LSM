@@ -6,6 +6,8 @@ import { SearchBuildingService } from 'src/app/services/search-building.service'
 import { BuildingModel } from 'src/app/models/BuildingModel';
 import { SearchGroupService } from 'src/app/services/search-group.service';
 import { GroupModel } from 'src/app/models/GroupModel';
+import { MediaModel } from 'src/app/models/MediaModel';
+import { SearchMediaService } from 'src/app/services/search-media.service';
 
 @Component({
   selector: 'app-home',
@@ -16,22 +18,26 @@ export class HomeComponent implements OnInit {
   searchLockService: SearchLockService;
   searchBuildingService: SearchBuildingService;
   searchGroupService: SearchGroupService;
+  searchMediaService: SearchMediaService;
   locks: LockModel[];
   entityOptions: string[] = ['Lock', 'Building', 'Medium', 'Group'];
   searchText: string = '';
   entity: string = 'Lock';
   buildings: BuildingModel[];
   groups: GroupModel[];
+  media: MediaModel[];
 
   constructor(
     private http: HttpClient,
     searchLockService: SearchLockService,
     searchBuildingService: SearchBuildingService,
-    searchGroupService: SearchGroupService
+    searchGroupService: SearchGroupService,
+    searchMediaService: SearchMediaService
   ) {
     this.searchLockService = searchLockService;
     this.searchBuildingService = searchBuildingService;
     this.searchGroupService = searchGroupService;
+    this.searchMediaService = searchMediaService;
   }
 
   ngOnInit(): void {}
@@ -51,6 +57,9 @@ export class HomeComponent implements OnInit {
           });
         break;
       case 'Medium':
+        this.searchMediaService.getItems(this.searchText).subscribe((items) => {
+        this.media = items;
+      });
         break;
       case 'Group':
         this.searchGroupService.getItems(this.searchText).subscribe((items) => {
