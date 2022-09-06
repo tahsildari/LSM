@@ -2,6 +2,7 @@ using AutoMapper;
 using LSM.Dto;
 using LSM.Entities;
 using LSM.Exceptions;
+using LSM.Extensions;
 using LSM.Mapping;
 using LSM.Services.Application.Sorting;
 using LSM.Services.Data;
@@ -33,24 +34,8 @@ namespace LSM
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddSingleton<IDataService, DataService>();
+            builder.Services.AddApplicationServices();
 
-            builder.Services.AddScoped<IWeightService, WeightService>();
-            builder.Services.AddScoped<ISortService<IWeighted>, SortService>();
-
-            builder.Services.AddScoped<IFilterService<Lock>, FilterLockService>();
-            builder.Services.AddScoped<ISearchService<LockDto>, LockSearchService>();
-
-            builder.Services.AddScoped<IFilterService<Building>, FilterBuildingService>();
-            builder.Services.AddScoped<ISearchService<BuildingDto>, BuildingSearchService>();
-
-            builder.Services.AddScoped<IFilterService<Group>, FilterGroupService>();
-            builder.Services.AddScoped<ISearchService<GroupDto>, GroupSearchService>();
-
-            builder.Services.AddScoped<IFilterService<Medium>, FilterMediaService>();
-            builder.Services.AddScoped<ISearchService<MediaDto>, MediaSearchService>();
-
-            //builder.Services.AddAutoMapper(typeof(Program));
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new MappingProfile());
