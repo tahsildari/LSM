@@ -34,6 +34,7 @@ namespace LSM
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddSingleton<IDataService, DataService>();
+
             builder.Services.AddScoped<IWeightService, WeightService>();
             builder.Services.AddScoped<ISortService<IWeighted>, SortService>();
 
@@ -45,6 +46,9 @@ namespace LSM
 
             builder.Services.AddScoped<IFilterService<Group>, FilterGroupService>();
             builder.Services.AddScoped<ISearchService<GroupDto>, GroupSearchService>();
+
+            builder.Services.AddScoped<IFilterService<Medium>, FilterMediaService>();
+            builder.Services.AddScoped<ISearchService<MediaDto>, MediaSearchService>();
 
             //builder.Services.AddAutoMapper(typeof(Program));
             var mapperConfig = new MapperConfiguration(mc =>

@@ -20,5 +20,7 @@ namespace LSM.Entities
         [Weight(6)]
         public string Description { get; set; }
 
+        public Group Group { get; set; }
+
     }
 }
