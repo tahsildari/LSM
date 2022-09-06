@@ -509,6 +509,11 @@
   ],
   "groups": [
     {
+      "id": "70c886f5-b74e-49f4-8d9f-cf2d6645d4dd",
+      "name": "<test>",
+      "description": "Test group for testing :)"
+    },
+    {
       "id": "70c886f5-b74e-49f4-8d9f-cf2d6645d4d6",
       "name": "<default>",
       "description": "Default group where all transponders"
@@ -575,6 +580,30 @@
     }
   ],
   "media": [
+    {
+      "id": "2c2ec98f-137a-4c49-a47a-814ae18a3361",
+      "groupId": "70c886f5-b74e-49f4-8d9f-cf2d6645d4d6",
+      "type": "Card",
+      "owner": "Test 1",
+      "description": null,
+      "serialNumber": "UID-378D17F7"
+    },
+    {
+      "id": "2c2ec98f-137a-4c49-a47a-814ae18a3362",
+      "groupId": "70c886f5-b74e-49f4-8d9f-cf2d6645d4d6",
+      "type": "Card",
+      "owner": "Test",
+      "description": null,
+      "serialNumber": "UID-378D17F8"
+    },
+    {
+      "id": "2c2ec98f-137a-4c49-a47a-814ae18a3363",
+      "groupId": "70c886f5-b74e-49f4-8d9f-cf2d6645d4dd",
+      "type": "Card",
+      "owner": "Sample 1",
+      "description": null,
+      "serialNumber": "UID-378D17F9"
+    },
     {
       "id": "2c2ec98f-137a-4c49-a47a-814ae18a3364",
       "groupId": "70c886f5-b74e-49f4-8d9f-cf2d6645d4d6",

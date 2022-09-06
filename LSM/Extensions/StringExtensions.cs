@@ -9,5 +9,10 @@
                     search,
                     StringComparison.InvariantCultureIgnoreCase);
         }
+
+        public static bool EqualsIgnoreCase(this string source, string search)
+        {
+            return source != null && source.ToLower() == search.ToLower();
+        }
     }
 }

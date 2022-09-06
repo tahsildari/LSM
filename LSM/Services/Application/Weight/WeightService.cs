@@ -54,7 +54,7 @@ namespace LSM.Services.Weight
                                 continue;
 
                             value = propertyValue.ToString();
-                            if (value.Equals(text))
+                            if (value.EqualsIgnoreCase(text))
                                 weight += (((IWeighable)attr).Weight * Constants.FullMatchMultiplier); //todo: no magic string
                             else if (value.ContainsIgnoreCase(text))
                                 weight += ((IWeighable)attr).Weight;
