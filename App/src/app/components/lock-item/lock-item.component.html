@@ -18,17 +18,17 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <div class="d-flex justify-content-between mb-3 small">
+      <div class="d-flex justify-content-between small">
         <div>
           <p class="card-text text-small">room: {{ lock.roomNumber }}</p>
         </div>
         <div>
-          <p class="text-align-top text-right text-warning me-1">
+          <p class="text-align-top text-right text-warning mb-0">
             <i class="fa fa-angle-double-up"></i> {{ lock.searchWeight }}
           </p>
         </div>
       </div>
     </li>
-    <li class="list-group-item">{{ lock.description }}</li>
+    <li class="list-group-item" *ngIf="lock.description">{{ lock.description }}</li>
   </ul>
 </div>
