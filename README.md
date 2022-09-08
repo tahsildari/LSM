@@ -27,6 +27,7 @@ DataFile is a root object in json file with data.
 
 Note: the results with maximum sum of weights are the most relevant
 
+```json
 DataFile := {
   buildings      : arrayOf Building
   locks          : arrayOf Lock
@@ -67,3 +68,4 @@ Medium := {
   serialNumber  : String       # W=8
   description   : String       # W=6
 }
+```
